@@ -182,11 +182,11 @@
           </div>
           
 <div>
-  <label for="00NU7000006m4dl" class="block text-sm font-medium text-gray-700">
+  <label for="00NU7000006lumT" class="block text-sm font-medium text-gray-700">
     Birth Year
   </label>
   <select
-    id="00NU7000006m4dl"
+    id="00NU7000006lumT"
     name="birthYear"
     required
     class="w-full p-2 border border-gray-300 rounded-lg"
@@ -404,7 +404,7 @@ if(relationshipToInsured){
   toggleMaritalStatusField(); // initial call on page load
 }
 
-const birthYearSelect = document.getElementById("00NU7000006m4dl");
+const birthYearSelect = document.getElementById("00NU7000006lumT");
 if (birthYearSelect) {
   const currentYear = new Date().getFullYear();
   for (let y = currentYear; y >= 1900; y--) {
