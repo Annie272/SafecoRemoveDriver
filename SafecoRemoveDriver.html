@@ -383,7 +383,7 @@
       }
 
       // Salesforce radio hidden checkbox handling
-      document.querySelectorAll('input[name="00NU7000006IOzh"]').forEach(radio => {
+      document.querySelectorAll('input[name="Is_this_a_quote_or_a_change_request__c"]').forEach(radio => {
         radio.addEventListener('change', function() {
           document.getElementById("sfQuote").value = this.value === "Quote" ? "true" : "false";
           document.getElementById("sfEndorsement").value = this.value === "Endorse" ? "true" : "false";
@@ -420,14 +420,15 @@
 
         // Validate fields with your specific rules:
         validate("email", "Email", {pattern: /^.+@.+\..+$/});
-        const reqType = Array.from(document.querySelectorAll('input[name="00NU7000006IOzh"]')).find(i => i.checked);
+        const reqType = Array.from(document.querySelectorAll('input[name="Is_this_a_quote_or_a_change_request__c"]')).find(i => i.checked);
         if (!reqType) {
           missing.push("Request Type");
           missingData.push({field: "Request Type", value: ""});
         } else {
           completedData.push({field: "Request Type", value: reqType.value});
         }
-        validate("00NU7000005zuX3", "Policy Number", {pattern: /^Y\d{7}$/});
+        validate("00NU7000005zuX3", "Policy Number");
+        
         validate("00NU7000005zuLl", "Effective Date", {pattern: /^(0[1-9]|1[0-2])\/([0-2][0-9]|3[01])\/\d{4}$/});
         validate("00NU7000005zuOz", "First Name");
         validate("00NU7000006lumT", "Birth Year");
